@@ -13,4 +13,4 @@ Features
 Learn by Playing
 Players increase their wealth and knowledge by making smart investments, interacting with characters like engineers, journalists, and brokers, and reacting to market trends.
 
-
+preview-game.mp4
