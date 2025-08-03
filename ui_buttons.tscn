@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcyv845w3ivib"]
+
+[ext_resource type="PackedScene" uid="uid://dq7bbany1faxw" path="res://stocktab.tscn" id="1_5yjmx"]
+[ext_resource type="PackedScene" uid="uid://dcflr5jgjbuxx" path="res://infobutton.tscn" id="2_suest"]
+[ext_resource type="PackedScene" uid="uid://cso433tqhu8ap" path="res://menuoption.tscn" id="3_ykb67"]
+
+[node name="UIButtons" type="CanvasLayer"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = -1
+anchor_left = 0.918
+anchor_right = 1.0
+anchor_bottom = 0.308
+offset_left = 2.99988
+offset_bottom = -165.6
+grow_horizontal = 0
+
+[node name="stocktab" parent="VBoxContainer" instance=ExtResource("1_5yjmx")]
+
+[node name="menuoption" parent="VBoxContainer" instance=ExtResource("3_ykb67")]
+
+[node name="infobutton" parent="VBoxContainer" instance=ExtResource("2_suest")]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.942823, 0.942823, 0.942823, 1)

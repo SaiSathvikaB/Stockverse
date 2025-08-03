@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://da65s5b8vc5nw"]
+
+[ext_resource type="AudioStream" uid="uid://chnemdfacxdyg" path="res://assets/music/3_CoffeeBeans.wav" id="1_k4xj7"]
+[ext_resource type="Script" uid="uid://dl42dr60678sp" path="res://music_player.gd" id="2_p3pav"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_k4xj7")
+volume_db = 1.0
+autoplay = true
+script = ExtResource("2_p3pav")

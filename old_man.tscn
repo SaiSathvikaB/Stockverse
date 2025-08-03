@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://b6250xwqgdjpc"]
+
+[ext_resource type="Script" uid="uid://dctoytgia62ef" path="res://old_man.gd" id="1_tjsre"]
+[ext_resource type="Texture2D" uid="uid://cqwwk66e0xvfm" path="res://npcs/oldman.png" id="2_fs47u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gagtg"]
+atlas = ExtResource("2_fs47u")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycqd0"]
+atlas = ExtResource("2_fs47u")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7sqg"]
+atlas = ExtResource("2_fs47u")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odgka"]
+atlas = ExtResource("2_fs47u")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vlbio"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gagtg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycqd0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7sqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odgka")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fs47u"]
+radius = 117.427
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ej88h"]
+radius = 31.3209
+
+[node name="old-man" type="CharacterBody2D"]
+script = ExtResource("1_tjsre")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(997, 243)
+scale = Vector2(3.37501, 5)
+sprite_frames = SubResource("SpriteFrames_vlbio")
+animation = &"idle"
+frame_progress = 0.530474
+
+[node name="ChatArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChatArea"]
+position = Vector2(995, 248)
+shape = SubResource("CircleShape2D_fs47u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(997, 248)
+shape = SubResource("CircleShape2D_ej88h")

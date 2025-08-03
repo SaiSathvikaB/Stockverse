@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dq7bbany1faxw"]
+
+[ext_resource type="Script" uid="uid://bmp1yrhoviwu6" path="res://open.gd" id="1_1ky7o"]
+
+[sub_resource type="Theme" id="Theme_1ky7o"]
+
+[sub_resource type="SystemFont" id="SystemFont_1ky7o"]
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ky7o"]
+bg_color = Color(0.00567139, 0.00543806, 0.209011, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="stocktab" type="CanvasLayer"]
+
+[node name="open" type="Button" parent="."]
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -120.0
+offset_top = 100.0
+offset_bottom = 213.0
+grow_horizontal = 0
+theme = SubResource("Theme_1ky7o")
+theme_override_colors/font_disabled_color = Color(0.922275, 0.918368, 0.98, 1)
+theme_override_colors/font_color = Color(0.920173, 0.919716, 0.97664, 1)
+theme_override_colors/font_focus_color = Color(0.122313, 0.358631, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_1ky7o")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ky7o")
+action_mode = 0
+text = "Stocktab
+
+
+"
+script = ExtResource("1_1ky7o")

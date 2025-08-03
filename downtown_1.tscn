@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://c48ja388psdnm"]
+
+[ext_resource type="Script" uid="uid://5u544wdg2tj1" path="res://downtown_1.gd" id="1_3jmwh"]
+[ext_resource type="PackedScene" uid="uid://btn5bnhv0pld5" path="res://techie.tscn" id="3_p7eb8"]
+[ext_resource type="Script" uid="uid://bt1t74u0spu62" path="res://topexit.gd" id="3_s6l7a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ff1p"]
+size = Vector2(240.75, 13.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6l7a"]
+size = Vector2(288, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7eb8"]
+size = Vector2(7.25, 242)
+
+[node name="downtown1" type="Node2D"]
+script = ExtResource("1_3jmwh")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+
+[node name="topexit" type="Area2D" parent="."]
+modulate = Color(1, 0.993298, 0.999395, 1)
+self_modulate = Color(1, 0.964072, 0.965766, 1)
+top_level = true
+script = ExtResource("3_s6l7a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="topexit"]
+top_level = true
+z_index = 10
+position = Vector2(764.375, 12.25)
+shape = SubResource("RectangleShape2D_1ff1p")
+debug_color = Color(0.990069, 0.893172, 0.95971, 0.42)
+
+[node name="bottomexit" type="Area2D" parent="."]
+top_level = true
+script = ExtResource("3_s6l7a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bottomexit"]
+position = Vector2(842, 690)
+shape = SubResource("RectangleShape2D_s6l7a")
+
+[node name="leftexit" type="Area2D" parent="."]
+top_level = true
+position = Vector2(-13, 6)
+script = ExtResource("3_s6l7a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftexit"]
+position = Vector2(25.375, 126)
+shape = SubResource("RectangleShape2D_p7eb8")
+
+[node name="TopSpawn" type="Marker2D" parent="."]
+position = Vector2(769, 164)
+
+[node name="Bottomspawn" type="Marker2D" parent="."]
+position = Vector2(834, 550)
+
+[node name="LeftSpawn" type="Marker2D" parent="."]
+position = Vector2(111, 139)
+
+[node name="RightSpawn" type="Marker2D" parent="."]
+position = Vector2(190, 148)
+
+[node name="techie" parent="." instance=ExtResource("3_p7eb8")]
+
+[connection signal="body_entered" from="topexit" to="." method="_on_topexit_body_entered"]
+[connection signal="body_entered" from="bottomexit" to="." method="_on_bottomexit_body_entered"]
+[connection signal="body_entered" from="leftexit" to="." method="_on_leftexit_body_entered"]

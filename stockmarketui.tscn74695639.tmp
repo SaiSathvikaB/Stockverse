@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5gmrp3t3b1oq"]
+
+[ext_resource type="Script" uid="uid://chlae8xm1rybm" path="res://ui.gd" id="1_ja2xc"]
+[ext_resource type="Script" uid="uid://bawde4noo4i2p" path="res://graph.gd" id="2_xmafe"]
+[ext_resource type="PackedScene" uid="uid://cajwarc6tefv3" path="res://deal.tscn" id="3_g3fok"]
+
+[node name="ui" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ja2xc")
+
+[node name="header" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="money" type="Label" parent="header"]
+layout_mode = 2
+
+[node name="stockcontainer" type="HBoxContainer" parent="header"]
+layout_mode = 2
+
+[node name="bcount" type="Label" parent="header/stockcontainer"]
+layout_mode = 2
+
+[node name="rcount" type="Label" parent="header/stockcontainer"]
+layout_mode = 2
+
+[node name="gcount" type="Label" parent="header/stockcontainer"]
+layout_mode = 2
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="pause" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="graph" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_xmafe")
+
+[node name="deal1" parent="." instance=ExtResource("3_g3fok")]
+layout_mode = 1
+
+[node name="deal2" parent="." instance=ExtResource("3_g3fok")]
+layout_mode = 1
+
+[node name="deal3" parent="." instance=ExtResource("3_g3fok")]
+layout_mode = 1

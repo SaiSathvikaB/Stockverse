@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=3 uid="uid://bn5c2lhpfry"]
+
+[ext_resource type="TileSet" uid="uid://cpv8nnoau8phe" path="res://residential.tres" id="1_crn0q"]
+[ext_resource type="Script" uid="uid://7d33pppt7njj" path="res://level_0.gd" id="2_g7nmv"]
+[ext_resource type="PackedScene" uid="uid://bso4c5k2fqbsj" path="res://neighbour.tscn" id="4_81t6j"]
+[ext_resource type="Script" uid="uid://bt1t74u0spu62" path="res://topexit.gd" id="4_bc2h3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_572np"]
+size = Vector2(14, 254)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bc2h3"]
+size = Vector2(9, 291)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81t6j"]
+size = Vector2(277, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvqo5"]
+size = Vector2(331, 17)
+
+[node name="residential" type="Node2D"]
+
+[node name="level0" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_crn0q")
+script = ExtResource("2_g7nmv")
+
+[node name="rightexit" type="Area2D" parent="."]
+top_level = true
+script = ExtResource("4_bc2h3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rightexit"]
+position = Vector2(1488, 348)
+shape = SubResource("RectangleShape2D_572np")
+
+[node name="leftexit" type="Area2D" parent="."]
+top_level = true
+script = ExtResource("4_bc2h3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftexit"]
+position = Vector2(10.5, 326.5)
+shape = SubResource("RectangleShape2D_bc2h3")
+
+[node name="topexit" type="Area2D" parent="."]
+top_level = true
+position = Vector2(328, 0)
+script = ExtResource("4_bc2h3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="topexit"]
+position = Vector2(378.5, 3)
+shape = SubResource("RectangleShape2D_81t6j")
+
+[node name="bottomexit" type="Area2D" parent="."]
+top_level = true
+position = Vector2(108, 462)
+script = ExtResource("4_bc2h3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bottomexit"]
+position = Vector2(622.5, 224.5)
+shape = SubResource("RectangleShape2D_jvqo5")
+
+[node name="LeftSpawn" type="Marker2D" parent="."]
+position = Vector2(203, 338)
+
+[node name="Rightspawn" type="Marker2D" parent="."]
+position = Vector2(1017, 325)
+
+[node name="TopSpawn" type="Marker2D" parent="."]
+position = Vector2(728, 209)
+
+[node name="BottomSpawn" type="Marker2D" parent="."]
+position = Vector2(721, 542)
+
+[node name="neighbour" parent="." instance=ExtResource("4_81t6j")]
+position = Vector2(-1, 4)
+
+[connection signal="body_entered" from="rightexit" to="level0" method="_on_rightexit_body_entered"]
+[connection signal="body_entered" from="leftexit" to="level0" method="_on_leftexit_body_entered"]
+[connection signal="body_entered" from="topexit" to="level0" method="_on_topexit_body_entered"]
+[connection signal="body_entered" from="bottomexit" to="level0" method="_on_bottomexit_body_entered"]

@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://c61h0ep0n7n4r"]
+
+[ext_resource type="Script" uid="uid://dr2qq5hrc3h3i" path="res://industry.gd" id="1_ontbb"]
+[ext_resource type="Script" uid="uid://bt1t74u0spu62" path="res://topexit.gd" id="3_3srf4"]
+[ext_resource type="PackedScene" uid="uid://bqa86r7lxv4uf" path="res://scientist.tscn" id="3_i6vs3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4bik"]
+size = Vector2(220, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3srf4"]
+size = Vector2(6, 191.5)
+
+[node name="industry" type="Node2D"]
+script = ExtResource("1_ontbb")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+
+[node name="bottomexit" type="Area2D" parent="."]
+top_level = true
+script = ExtResource("3_3srf4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bottomexit"]
+position = Vector2(803, 688)
+shape = SubResource("RectangleShape2D_q4bik")
+
+[node name="leftexit" type="Area2D" parent="."]
+top_level = true
+script = ExtResource("3_3srf4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftexit"]
+position = Vector2(8, 301.75)
+shape = SubResource("RectangleShape2D_3srf4")
+
+[node name="TopSpawn" type="Marker2D" parent="."]
+position = Vector2(775, 381)
+
+[node name="Bottomspawn" type="Marker2D" parent="."]
+position = Vector2(798, 603)
+
+[node name="LeftSpawn" type="Marker2D" parent="."]
+position = Vector2(759, 415)
+
+[node name="RightSpawn" type="Marker2D" parent="."]
+position = Vector2(736, 376)
+
+[node name="scientist" parent="." instance=ExtResource("3_i6vs3")]
+
+[connection signal="body_entered" from="bottomexit" to="." method="_on_bottomexit_body_entered"]
+[connection signal="body_entered" from="leftexit" to="." method="_on_leftexit_body_entered"]

@@ -1,0 +1,106 @@
+[gd_scene load_steps=10 format=3 uid="uid://dxx3814cqpe07"]
+
+[ext_resource type="Script" uid="uid://da8lst3fba3bi" path="res://settingsnode.gd" id="1_qew6d"]
+[ext_resource type="Texture2D" uid="uid://rqna3mx5bbx8" path="res://assets/bg/bg1 (4).jpg" id="2_1r27w"]
+
+[sub_resource type="SystemFont" id="SystemFont_1r27w"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mb7cy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1r27w"]
+bg_color = Color(0.00567139, 0.00543806, 0.209011, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.982343, 0.982342, 0.982342, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="SystemFont" id="SystemFont_vpf45"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vpf45"]
+bg_color = Color(0.334811, 0.694878, 0.894423, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 10
+
+[sub_resource type="SystemFont" id="SystemFont_mb7cy"]
+font_italic = true
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qf48o"]
+
+[node name="settingsnode" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_qew6d")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -225.0
+offset_right = 1506.0
+offset_bottom = 895.0
+texture = ExtResource("2_1r27w")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 500.0
+offset_right = 953.0
+offset_bottom = 599.0
+alignment = 1
+
+[node name="back" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.947199, 0.947199, 0.947199, 1)
+theme_override_colors/font_focus_color = Color(0.826185, 0.821349, 0.374916, 1)
+theme_override_fonts/font = SubResource("SystemFont_1r27w")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_mb7cy")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1r27w")
+action_mode = 0
+text = "Back"
+autowrap_mode = 2
+
+[node name="music" type="CheckButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.99558, 0.99558, 0.99558, 1)
+theme_override_colors/font_focus_color = Color(0.839216, 0.6, 0.180392, 1)
+theme_override_fonts/font = SubResource("SystemFont_vpf45")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vpf45")
+button_pressed = true
+action_mode = 0
+text = "Music"
+autowrap_mode = 2
+
+[node name="settingstitle" type="Label" parent="."]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 0
+offset_left = 600.0
+offset_top = 50.0
+offset_right = 910.0
+offset_bottom = 350.0
+theme_override_colors/font_color = Color(0.982343, 0.982342, 0.982342, 1)
+theme_override_colors/font_shadow_color = Color(0.737255, 0.415686, 0.0980392, 1)
+theme_override_colors/font_outline_color = Color(0.929891, 0.697674, 0.891986, 1)
+theme_override_fonts/font = SubResource("SystemFont_mb7cy")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_qf48o")
+horizontal_alignment = 1

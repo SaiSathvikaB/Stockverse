@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://25p5q1ji7vnh"]
+
+[ext_resource type="Script" uid="uid://blfr0pqe2isey" path="res://world.gd" id="1_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://chj3oq3b5i33e" path="res://player.tscn" id="2_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://bcyv845w3ivib" path="res://ui_buttons.tscn" id="3_tlwt5"]
+
+[node name="world" type="Node2D"]
+script = ExtResource("1_fj7yv")
+
+[node name="player" parent="." instance=ExtResource("2_tlwt5")]
+top_level = true
+
+[node name="CurrentMap" type="Node2D" parent="."]
+
+[node name="UIButtons" parent="." instance=ExtResource("3_tlwt5")]
