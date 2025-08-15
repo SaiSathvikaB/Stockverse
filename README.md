@@ -13,7 +13,7 @@ Features
 Learn by Playing
 Players increase their wealth and knowledge by making smart investments, interacting with characters like engineers, journalists, and brokers, and reacting to market trends.
 
-## preview-game.mp4
+## preview video-(Stockverse/game.mp4)
 
 <img width="1511" height="780" alt="image" src="https://github.com/user-attachments/assets/2c07d0d8-0ba3-4c3a-9a56-f5dc4d12a66a" />
 
