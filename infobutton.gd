@@ -4,7 +4,7 @@ extends Button
 const CHATGPT_POPUP_SCENE_PATH := "res://chatgptpopup.tscn"
 
 # Your OpenAI API key here or you can export it too
-@export var openai_api_key : String = "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"
+@export var openai_api_key : String = "chatgptapikey"
 
 var chatgpt_popup_scene : PackedScene = preload(CHATGPT_POPUP_SCENE_PATH)
 
